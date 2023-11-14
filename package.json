@@ -1,0 +1,16 @@
+{
+  "name": "group-1-project-2",
+  "version": "1.0.0",
+  "description": "Our second team project for our coding bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  }
+}
