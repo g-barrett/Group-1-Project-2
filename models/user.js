@@ -15,6 +15,12 @@ User.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        likes: {
+            references: {
+                model: 'restaurant',
+                key: 'id',
+            }
+        },
         // username, email and password
         first_name: {
             type: DataTypes.STRING,
