@@ -15,11 +15,6 @@ Restaurant.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        liked: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            
-        },
         address: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -27,5 +22,8 @@ Restaurant.init(
     },
     {
         sequelize,
+        modelName: 'restaurants',
     }
 );
+
+module.exports = Restaurant;
