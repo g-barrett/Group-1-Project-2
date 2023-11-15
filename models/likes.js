@@ -26,3 +26,5 @@ Restaurant.belongsToMany(User, { through: Likes });
 
 
 Likes.init();
+
+module.exports = Likes;
