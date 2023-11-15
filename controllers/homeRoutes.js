@@ -10,7 +10,7 @@ const { Restaurant, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // All restaurants
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         // Get all restaurants and JOIN with user data
         const restaurantData = await Restaurant.findAll({
