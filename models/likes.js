@@ -4,14 +4,14 @@ const sequelize = require('../config/connection.js');
 class Likes extends Model {};
 
 const Likes = sequelize.define('Likes', {
-    userId: {
+    user_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'User',
             key: 'id'
         }
     },
-    restaurantId: {
+    restaurant_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'Restaurant',
