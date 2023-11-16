@@ -1,0 +1,51 @@
+{{!-- Login form --}}
+    <div class="row">
+    <div class="col-md-6">
+    <h2>Login</h2>
+
+    <form action="/login" method="POST" class="form login-form">
+        <div class="form-group">
+            <label for="username-login">Username:</label>
+            <input class="form-input" type="text" id="username-login" />
+        </div>
+        <div class="form-group">
+            <label for="password-login">Password:</label>
+            <input class="form-input" type="password" id="password-login" />
+        </div>
+        <div class="form-goup">
+            <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+    </form>
+    </div>
+
+    {{!-- Signup Form --}}
+    <div class="col-md-6">
+        <h2>Register</h2>
+
+        <form action="/register" method="POST"class="form signup-form">
+            <div class="form-group">
+                <label for="name-register">First Name:</label>
+                <input class="form-input" type="text" id="name-register" />
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input class="form-input" type="text" id="last-name" />
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input class="form-input" type="text" id="email-register" />
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input class="form-input" type="text" id="username-register" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input class="form-input" type="text" id="password-register" />
+            </div>
+            <div class="form-goup">
+            <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+        </form>
+        </div>
+    </div>
