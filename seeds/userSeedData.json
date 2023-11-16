@@ -2,12 +2,14 @@
     {
         "first_name": "Drew",
         "last_name": "Barrymore",
+        "username": "DrewBear1999",
         "email": "drewbarrymore@example.com",
         "password": "password123"
     },
     {
         "first_name": "Drew",
         "last_name": "Carey",
+        "username": "CareBear42",
         "email": "drewcarey@example.com",
         "password": "password123"
     }
