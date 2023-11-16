@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nom Nom Navigator</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,900;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+    <h1>Nom Nom Navigator</h1> <!-- Your h1 element -->
+    <nav class="top-nav">
+        {{#if logged_in}}
+        <a href="/home">Home</a>
+        <a href="/search">Search</a>
+        <a href="/restaurants">Restaurants</a>
+        {{else}}
+        {{!-- <a href="#signup">Sign Up</a> --}}
+        {{/if}}
+    </nav>
+</header>
+    <main>
+    <div class="container">
+        {{#unless logged_in}}
+        <section id="login" class="login-section">
+            <h2>Login</h2>
+            <form class="form login-form">
+                <div class="form-group">
+                    <label for="username-login">Username:</label>
+                    <input class="form-input" type="text" id="username-login" name="username" />
+                </div>
+                <div class="form-group">
+                    <label for="password-login">Password:</label>
+                    <input class="form-input" type="password" id="password-login" name="password" />
+                </div>
+                <div class="form-goup">
+                <button class="btn" type="submit">Login</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="signup" class="signup-section">
+            <h2>Signup</h2>
+            <form class="form signup-form">
+                <div class="form-group">
+                    <label for="name-signup">First Name:</label>
+                    <input class="form-input" type="text" id="name-signup" name="firstName" />
+                </div>
+                <div class="form-group">
+                    <label for="last-name-signup">Last Name:</label>
+                    <input class="form-input" type="text" id="last-name-signup" name="lastName" />
+                </div>
+                <div class="form-group">
+                    <label for="email-signup">Email:</label>
+                    <input class="form-input" type="email" id="email-signup" name="email" />
+                </div>
+                <div class="form-group">
+                    <label for="username-signup">Username:</label>
+                    <input class="form-input" type="text" id="username-signup" name="username" />
+                </div>
+                <div class="form-group">
+                    <label for="password-signup">Password:</label>
+                    <input class="form-input" type="password" id="password-signup" name="password" />
+                </div>
+                <div class="form-goup">
+                    <button class="btn" type="submit">Signup</button>
+                </div>
+            </form>
+        </section>
+        {{/unless}}
+
+        {{#if logged_in}}
+        <section id="search" class="search-section">
+            <h2>Search Restaurants</h2>
+            <form class="form search-form">
+                <div class="form-group">
+                    <label for="search-input">Search by Zip Code/City:</label>
+                    <input class="form-input" type="text" id="search-input" name="search" />
+                </div>
+                <div class="form-goup">
+                    <button class="btn" type="submit">Search</button>
+                </div>
+            </form>
+        </section>
+        {{/if}}
+    </div>
+    </main>
+</body>
+</html>

@@ -2,17 +2,17 @@ const express = require('express');
 const router = express.Router();
 const { User } = require('../models');
 
-// // Route for displaying the login page
-// router.get('/login', (req, res) => {
+// Route for displaying the login page
+router.get('/login', (req, res) => {
 
-// });
+});
 
-// // Route for processing the login logic
+// Route for processing the login logic
 // router.post('/login', (req, res) => {
 
 // });
 
-// // Route for displaying the registration page
+// Route for displaying the registration page
 // router.get('/register', (req, res) => {
 
 // });
