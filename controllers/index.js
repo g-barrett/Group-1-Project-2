@@ -9,7 +9,6 @@ const authController = require('./authController');
 router.use('/', homeController);
 router.use('/', authController);
 // router.use('/search', searchController);
-// router.use('/', homeRoutes);
 // router.use('/api', apiRoutes);
 
 module.exports = router;

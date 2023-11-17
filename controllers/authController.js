@@ -10,7 +10,6 @@ const { User } = require('../models');
 
 // Route for processing the login
 router.post('/login', async (req, res) => {
-    console.log("Login route hit with body:", req.body);
 
     try {
     const userData = await User.findOne({ where: { username: req.body.username } });
@@ -50,6 +49,8 @@ router.post('/login', async (req, res) => {
 
 // Route for processing the registration logic
 router.post('/register', async (req, res) => {
+    console.log("Login route hit with body:", req.body);
+
     try {
         const userData = await User.create(req.body);
 
@@ -64,7 +65,5 @@ router.post('/register', async (req, res) => {
     }
 });
 
-
-// Additional routes like logout can be added here
 
 module.exports = router;
