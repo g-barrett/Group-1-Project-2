@@ -3,11 +3,11 @@ const router = express.Router();
 const { User } = require('../models');
 
 // Route for displaying the login page
-router.get('/login', (req, res) => {
+// router.get('/login', (req, res) => {
 
-});
+// });
 
-// Route for processing the login logic
+// Route for processing the login
 router.post('/login', async (req, res) => {
     try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
         
-        res.json({ user: userData, message: 'You are now logged in!' });
+        res.redirect('/restaurants');
     });
 
     } catch (err) {
@@ -53,7 +53,7 @@ router.post('/register', async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
-
+            console.log(`Body Req`, req.body)
             res.status(200).json(userData);
         });
     } catch (err) {

@@ -14,7 +14,7 @@
         <div class="auth-container">
             <section id="login-section" class="auth-block">
                 <h2>Login</h2>
-                <form id="login-form" class="auth-form">
+                <form id="login-form" class="auth-form" action="/login" method="POST">
                     <div class="form-group">
                         <label for="username-login">Username:</label>
                         <input class="form-input" type="text" id="username-login" name="username" required />
@@ -28,7 +28,7 @@
                     </div>
                 </form>
             </section>
-            <section id="signup-section" class="auth-block">
+            <section id="signup-section" class="auth-form" action="/register" method="POST">
                 <h2>Sign Up</h2>
                 <form id="signup-form" class="auth-form">
                     <div class="form-group">
