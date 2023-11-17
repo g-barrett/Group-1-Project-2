@@ -4,9 +4,10 @@ const withAuth = require('../utils/auth');
 const { User } = require('../models');
 
 // Route to render the homepage
-router.get('/home', withAuth, (req, res) => {
+router.get('/home', (req, res) => {
     // Render the 'homepage' view with the logged_in variable
-    res.render('homepage', { logged_in: req.isLoggedin });
+    console.log('HOME ROUTE!')
+    res.render('homepage', { logged_in: req.isLoggedin }); 
 });
 
 module.exports = router;
