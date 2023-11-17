@@ -21,7 +21,7 @@ body {
         /* Set the background image */
         background-image: url('../images/nomnav.png');
         background-size: cover;
-        background-position: center;
+        background-position: top center;
         background-repeat: no-repeat;
 }
 
@@ -108,13 +108,36 @@ h2, h3 {
     display: flex;
     flex-direction: column;  /* Stack the forms */
     align-items: center; /* Center the forms horizontally */
-    gap: 20px; /* Reduced space between forms */
-    
+    gap: 20px; /* Reduced space between forms */   
+}
+
+.container-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Reduced space between forms */   
+
 }
 
 form {
     width: 100%; 
     max-width: 750px; 
+    height: auto;
+    background: #043CAD;
+    margin: 10px;
+    padding: 20px 69px;
+    border-radius: 8px;
+    border: 5px solid #D3FA52; 
+    display: flex;
+    flex-direction: column; /* Stack form elements */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.card {
+    width: 100%; 
+    max-width: 750px;
+    height: auto; 
     background: #043CAD;
     margin: 10px;
     padding: 20px 69px;
@@ -129,6 +152,11 @@ form {
 
 div {
     margin-bottom: 10px;
+}
+
+#map {
+    height: 700px; 
+    width: 500px;
 }
 
 label {
@@ -191,6 +219,10 @@ button[type=submit]:hover {
     .nav-link:hover {
         color: #EC058E; 
         text-shadow: 2px 3px 1px #D3FA52;
+    }
+    #map {
+        height: 400px; 
+        width: 100%;
     }
 }
 

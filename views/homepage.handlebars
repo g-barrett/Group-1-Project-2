@@ -1,27 +1,30 @@
-    <main>
-        <div class="auth-container">
-            <section id="login-section" class="auth-block">
+<main>
+    <div class="container">
+        <div class="container-row">
+            <div class="auth-container">
+                <section id="login-section" class="auth-block">
                     <form id="login-form" class="auth-form" action="/login" method="POST">
                         <h2>Login</h2>
-                    <div class="form-group">
-                        <label for="username-login">Username:</label>
-                        <input class="form-input" type="text" id="username-login" name="username" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="password-login">Password:</label>
-                        <input class="form-input" type="password" id="password-login" name="password" required />
-                    </div>
-                    <div class="form-group">
-                        <button class="btn" type="submit">Submit</button>
-                        {{#if loginError}}
-                        <p class="error-message">{{loginError}}</p>
-                        {{/if}}
-                    </div>
-                </form>
-            </section>
+                        <div class="form-group">
+                            <label for="username-login">Username:</label>
+                            <input class="form-input" type="text" id="username-login" name="username" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="password-login">Password:</label>
+                            <input class="form-input" type="password" id="password-login" name="password" required />
+                        </div>
+                        <div class="form-group">
+                            <button class="btn" type="submit">Submit</button>
+                            {{#if loginError}}
+                            <p class="error-message">{{loginError}}</p>
+                            {{/if}}
+                        </div>
+                    </form>
+                </section>
+            </div>    
+            <div class="auth-container">
                 <form id="signup-form" class="auth-form" action="/register" method="POST">
-                <h2>Sign Up</h2>
-                <form id="signup-form" class="auth-form">
+                    <h2>Sign Up</h2>
                     <div class="form-group">
                         <label for="firstname-signup">First Name:</label>
                         <input class="form-input" type="text" id="firstname-signup" name="first_name" required />
@@ -31,8 +34,8 @@
                         <input class="form-input" type="text" id="lastname-signup" name="last_name" required />
                     </div>
                     <div class="form-group">
-                        <label for="firstname-signup">Username:</label>
-                        <input class="form-input" type="text" id="firstname-signup" name="username" required />
+                        <label for="username-signup">Username:</label>
+                        <input class="form-input" type="text" id="username-signup" name="username" required />
                     </div>
                     <div class="form-group">
                         <label for="email-signup">Email:</label>
@@ -46,6 +49,7 @@
                         <button class="btn" type="submit">Submit</button>
                     </div>
                 </form>
-            </section>
+            </div>
         </div>
-    </main>
+    </div>
+</main>

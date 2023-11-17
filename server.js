@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-    secret: 'super_secret_key_test',
+    secret: process.env.SESSION_SECRET,
     cookie: {
         maxAge: 300000,
         httpOnly: true,
@@ -43,6 +43,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+
+app.get('/', (req, res) => {
+    res.render('main.handlebars', 'restaurant.handlebars', { googleApiKey: process.env.GOOGLE_API_KEY });
+});
+
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));

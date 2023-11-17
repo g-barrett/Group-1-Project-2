@@ -7,8 +7,10 @@
     <title>Nom Nom Navigator</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,900;1,700&display=swap" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+
 </head>
 
 <body>
@@ -100,6 +102,14 @@
     {{!-- BROKEN CODE /\ --}}
 
     {{{ body }}}
-<script src="../../public/js/style.js"></script>
+    
+<script src="/js/style.js"></script>
+<script src="/js/googleMaps.js"></script>
+<script src="/js/restaurantPage.js"></script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key={{googleApiKey}}&callback=initMap">
+</script>
+
 </body>
 </html>
