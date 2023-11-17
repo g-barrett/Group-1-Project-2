@@ -1,0 +1,118 @@
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #30332E; 
+    color: #FDFFFC; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh; 
+        /* Set the background image */
+        background-image: url('../images/nomnav.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+}
+
+header {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px; 
+    background-color: transparent; 
+    padding: 20px 0; 
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #D3FA52; /* Bright yellow for headers */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}    
+
+h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+
+}
+
+.container {
+    width: 100%; 
+    max-width: 960px;  /* Max width for container */
+    display: flex;
+    flex-direction: column;  /* Stack the forms */
+    align-items: center; /* Center the forms horizontally */
+    gap: 10px; /* Reduced space between forms */
+    
+}
+
+form {
+    width: 100%; 
+    max-width: 750px; 
+    background: #043CAD;
+    padding: 20px 69px;
+    border-radius: 8px;
+    border: 5px solid #D3FA52; 
+    display: flex;
+    flex-direction: column; /* Stack form elements */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #FDFFFC;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: calc(100% - 22px); /* Adjust width to account for padding and border */
+    padding: 10px;
+    border: 3px solid #D3FA52;
+    background: #30332E;
+    color: #FDFFFC;
+    border-radius: 4px;
+    margin-bottom: 3px; /* Space between inputs */
+}
+
+button[type=submit] {
+    background: #D3FA52;
+    color: #010400;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block; /* Make button block to occupy full width */
+    width: 100%;
+    margin-top: 3px; /* Space above the button */
+}
+
+button[type=submit]:hover {
+    background: #EC058E;
+    color: #FDFFFC;
+}
+
+/* Responsive Layout */
+@media (min-width: 600px) {
+    form {
+        margin: 0 auto; 
+        width: 90%; 
+        max-width: 750px; 
+    }
+}
