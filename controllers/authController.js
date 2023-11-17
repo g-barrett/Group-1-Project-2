@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { User } = require('../models');
+// const withAuth = require('../utils/auth');
 
 // Route for displaying the login page
 // router.get('/login', (req, res) => {
@@ -9,9 +10,11 @@ const { User } = require('../models');
 
 // Route for processing the login
 router.post('/login', async (req, res) => {
-    try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    console.log("Login route hit with body:", req.body);
 
+    try {
+    const userData = await User.findOne({ where: { username: req.body.username } });
+        console.log(userData);
     if (!userData) {
         res
         .status(400)
@@ -54,7 +57,7 @@ router.post('/register', async (req, res) => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
             console.log(`Body Req`, req.body)
-            res.status(200).json(userData);
+            res.redirect('/restaurants');
         });
     } catch (err) {
         res.status(400).json(err);

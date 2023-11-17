@@ -21,6 +21,9 @@ const sess = {
         httpOnly: true,
         secure: false,
         sameSite: 'strict',
+        resave: false,
+        saveUninitialized: true,
+        cookie: { secure: 'auto' }
     },
     resave: false,
     saveUninitialized: true,
