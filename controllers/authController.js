@@ -3,11 +3,6 @@ const router = express.Router();
 const { User } = require('../models');
 // const withAuth = require('../utils/auth');
 
-// Route for displaying the login page
-// router.get('/login', (req, res) => {
-
-// });
-
 // Route for processing the login
 router.post('/login', async (req, res) => {
 
@@ -17,7 +12,11 @@ router.post('/login', async (req, res) => {
     if (!userData) {
         res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        // .json({ message: 'Incorrect email or password, please try again' })
+        // When login fails
+        .render('homepage', { loginError: 'Incorrect email or password, please try again' }
+);
+
         return;
     }
 
@@ -26,26 +25,22 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
         res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        // .json({ message: 'Incorrect email or password, please try again' })
+        // When login fails
+        .render('homepage', { loginError: 'Incorrect email or password, please try again' })
         return;
     }
 
     req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
-        
-        res.redirect('/restaurants');
+        res.redirect("/restaurant");
     });
 
     } catch (err) {
     res.status(400).json(err);
     }
 });
-
-// Route for displaying the registration page
-// router.get('/register', (req, res) => {
-
-// });
 
 // Route for processing the registration logic
 router.post('/register', async (req, res) => {
@@ -61,7 +56,8 @@ router.post('/register', async (req, res) => {
             res.redirect('/restaurants');
         });
     } catch (err) {
-        res.status(400).json(err);
+        res.render('homepage', { loginError: 'Something went wrong. Please review form and resubmit.' })
+
     }
 });
 

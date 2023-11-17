@@ -13,17 +13,24 @@
 
 <body>
     <header>
-    <h1>Nom Nom Navigator</h1> <!-- Your h1 element -->
-    <nav class="top-nav">
-        {{#if logged_in}}
-        <a href="/home">Home</a>
-        <a href="/search">Search</a>
-        <a href="/restaurants">Restaurants</a>
-        {{else}}
-        {{!-- <a href="#signup">Sign Up</a> --}}
-        {{/if}}
-    </nav>
-</header>
+        <nav class="navbar">
+            <div class="nav-container">
+                {{#if logged_in}}
+                <a class="nav-link relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-right" href="/home">Home</a>
+                <a class="nav-link relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-right" href="/search">Search</a>
+                <a class="nav-link relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-right" href="/restaurants">Restaurants</a>
+                {{else}}
+                <a class="nav-link relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-right" href="/home">Home</a>
+                <a class="nav-link relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-right" href="/home">Signup</a>
+
+                {{/if}}
+            </div>
+        </nav>
+        <h1>Nom Nom Navigator</h1> 
+
+    </header>
+
+    {{!-- BROKEN CODE \/ --}}
     {{!-- <main>
     <div class="container">
         {{#unless logged_in}}
@@ -90,6 +97,9 @@
         {{/if}}
     </div>
     </main> --}}
+    {{!-- BROKEN CODE /\ --}}
+
     {{{ body }}}
+<script src="../../public/js/style.js"></script>
 </body>
 </html>
