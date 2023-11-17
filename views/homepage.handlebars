@@ -1,58 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nom Nom Navigator</title>
-    <link rel="stylesheet" href="/public/css/style.css">
-</head>
-<body>
-    <header>
-        <h1>Nom Nom Navigator</h1>
-    </header>
-    <main>
-        <div class="auth-container">
-            <section id="login-section" class="auth-block">
-                <h2>Login</h2>
-                <form id="login-form" class="auth-form" action="/login" method="POST">
-                    <div class="form-group">
-                        <label for="username-login">Username:</label>
-                        <input class="form-input" type="text" id="username-login" name="username" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="password-login">Password:</label>
-                        <input class="form-input" type="password" id="password-login" name="password" required />
-                    </div>
-                    <div class="form-group">
-                        <button class="btn" type="submit">Submit</button>
-                    </div>
+<div class="auth-container">
+    <section id="login-section" class="auth-block">
+        <h2>Login</h2>
+            <form id="login-form" class="auth-form" action="/login" method="POST">
+                <div class="form-group">
+                    <label for="username-login">Username:</label>
+                    <input class="form-input" type="text" id="username-login" name="username" required />
+                </div>
+                <div class="form-group">
+                    <label for="password-login">Password:</label>
+                    <input class="form-input" type="password" id="password-login" name="password" required />
+                </div>
+                <div class="form-group">
+                    <button class="btn" type="submit">Submit</button>
+                </div>
                 </form>
             </section>
-            <section id="signup-section" class="auth-form" action="/register" method="POST">
-                <h2>Sign Up</h2>
-                <form id="signup-form" class="auth-form">
-                    <div class="form-group">
-                        <label for="firstname-signup">First Name:</label>
-                        <input class="form-input" type="text" id="firstname-signup" name="firstName" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname-signup">Last Name:</label>
-                        <input class="form-input" type="text" id="lastname-signup" name="lastName" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="email-signup">Email:</label>
-                        <input class="form-input" type="email" id="email-signup" name="email" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="password-signup">Password:</label>
-                        <input class="form-input" type="password" id="password-signup" name="password" required />
-                    </div>
-                    <div class="form-group">
-                        <button class="btn" type="submit">Submit</button>
-                    </div>
+    <section id="signup-section" class="auth-form" action="/register" method="POST">
+    <h2>Sign Up</h2>
+        <form id="signup-form" class="auth-form">
+            <div class="form-group">
+                <label for="firstname-signup">First Name:</label>
+                <input class="form-input" type="text" id="firstname-signup" name="firstName" required />
+            </div>
+            <div class="form-group">
+                <label for="lastname-signup">Last Name:</label>
+                <input class="form-input" type="text" id="lastname-signup" name="lastName" required />
+            </div>
+            <div class="form-group">
+                <label for="email-signup">Email:</label>
+                <input class="form-input" type="email" id="email-signup" name="email" required />
+            </div>
+            <div class="form-group">
+                <label for="password-signup">Password:</label>
+                <input class="form-input" type="password" id="password-signup" name="password" required />
+            </div>
+            <div class="form-group">
+                <button class="btn" type="submit">Submit</button>
+            </div>
                 </form>
-            </section>
-        </div>
-    </main>
-</body>
-</html>
+    </section>
+</div>
