@@ -1,0 +1,21 @@
+<h1>Find a restaurant</h1>
+<h3>Search nearby restaurants</h3>
+
+<form action="/" method="GET" class="form search"> <!--classname can change-->
+    <label for="search">Enter City or ZipCode:</label>
+    <input type="text" id="search" name="search">
+    <button type="submit">Search</button>
+</form>
+
+<div class="search-results">
+    {{#each restaurants}}
+    <div class="restaurant-card">
+        <h4 class="card-body">{{restaurant.name}} - {{restaurant.address}}</h4>
+        <div>
+            <button class="like-button" data-id="{{restaurant.id}}">Like</button>
+            <button class="save-button" data-id="{{restaurant.id}}">Save</button>
+        </div>                
+    </div>
+    {{/each}}
+</div>
+
