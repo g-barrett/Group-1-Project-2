@@ -1,8 +1,8 @@
     <main>
         <div class="auth-container">
             <section id="login-section" class="auth-block">
-                <h2>Login</h2>
                     <form id="login-form" class="auth-form" action="/login" method="POST">
+                        <h2>Login</h2>
                     <div class="form-group">
                         <label for="username-login">Username:</label>
                         <input class="form-input" type="text" id="username-login" name="username" required />
@@ -13,6 +13,9 @@
                     </div>
                     <div class="form-group">
                         <button class="btn" type="submit">Submit</button>
+                        {{#if loginError}}
+                        <p class="error-message">{{loginError}}</p>
+                        {{/if}}
                     </div>
                 </form>
             </section>

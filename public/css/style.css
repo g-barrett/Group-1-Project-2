@@ -8,7 +8,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    padding: 20px;
+    /* padding: 20px; */
     background-color: #30332E; 
     color: #FDFFFC; 
     display: flex;
@@ -16,6 +16,8 @@ body {
     align-items: center; 
     justify-content: center; 
     min-height: 100vh; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
         /* Set the background image */
         background-image: url('../images/nomnav.png');
         background-size: cover;
@@ -26,23 +28,78 @@ body {
 header {
     text-align: center;
     width: 100%;
-    margin-bottom: 20px; 
+    margin: 0;
+    margin-bottom: 10px; 
     background-color: transparent; 
+    padding: 0; /* No padding */
+    border: none; /* No border */
+    background-clip: content-box;
     padding: 20px 0; 
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    margin-left: auto;
+    display: flex;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #D3FA52; /* Bright yellow for headers */
+    text-shadow: 2px 3px 1px #EC058E;
+    margin: 0 1em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.navbar-scrolled {
+    box-shadow: 0 5px 5px -5px #D3FA52;
+}
+
+a:after {
+    display: flex;
+    content: '';
+    border-bottom: solid 3px #043CAD;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+
+a:hover:after { transform: scaleX(1); }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    }
 
 h1 {
     font-size: 2.5em;
     color: #D3FA52; /* Bright yellow for headers */
+    text-shadow: 2px 3px 1px #EC058E;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }    
 
-h2 {
+h2, h3 {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-
 }
 
 .container {
@@ -51,7 +108,7 @@ h2 {
     display: flex;
     flex-direction: column;  /* Stack the forms */
     align-items: center; /* Center the forms horizontally */
-    gap: 10px; /* Reduced space between forms */
+    gap: 20px; /* Reduced space between forms */
     
 }
 
@@ -59,6 +116,7 @@ form {
     width: 100%; 
     max-width: 750px; 
     background: #043CAD;
+    margin: 10px;
     padding: 20px 69px;
     border-radius: 8px;
     border: 5px solid #D3FA52; 
@@ -77,12 +135,13 @@ label {
     display: block;
     margin-bottom: 5px;
     color: #FDFFFC;
+    
 }
 
 input[type=text],
 input[type=password],
 input[type=email] {
-    width: calc(100% - 22px); /* Adjust width to account for padding and border */
+    width: calc(100% - 22px); 
     padding: 10px;
     border: 3px solid #D3FA52;
     background: #30332E;
@@ -108,11 +167,30 @@ button[type=submit]:hover {
     color: #FDFFFC;
 }
 
+.error-message {
+    color: #D3FA52;
+    text-shadow: 2px 3px 2px #EC058E;
+}
 /* Responsive Layout */
 @media (min-width: 600px) {
     form {
-        margin: 0 auto; 
+        margin: 15px auto; 
         width: 90%; 
         max-width: 750px; 
     }
 }
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('path-to-desktop-image.jpg');
+        background-size: cover;
+        background-position:left;
+        background-repeat: no-repeat;
+        background-image: url('../images/nomnav.png');
+    }
+    .nav-link:hover {
+        color: #EC058E; 
+        text-shadow: 2px 3px 1px #D3FA52;
+    }
+}
+
