@@ -107,9 +107,15 @@
 <script src="/js/googleMaps.js"></script>
 <script src="/js/restaurantPage.js"></script>
 
+{{!-- Google JS Maps Library --}}
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key={{googleApiKey}}&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYNbRcyJ5B8V1_4ND-W2Z5OfYskYuj0sA&callback=initMap">
 </script>
 
+{{!-- Googl Places Library --}}
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYNbRcyJ5B8V1_4ND-W2Z5OfYskYuj0sA&libraries=places&callback=initAutocomplete">
+</script>
+{{!-- {{GOOGLE_API_KEY}} --}}
 </body>
 </html>

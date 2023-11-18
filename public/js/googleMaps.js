@@ -3,25 +3,101 @@
 
 // Code provided by google documentation
 // Initialize and add the map
+
+// Need the search to pull in the geolocation
+// Thought set an array for the add marker to loop through the contnet
+
+
+// Google Autocomplete Search Form
+let autocomplete;
+function initAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('search'),
+        {
+            types: ['establishment'],
+            componentRestrictions: {'country': ['US']},
+            fields: ['place_id', 'geometry', 'name']
+        }
+    );
+
+    autocomplete.addListener('place_changed', onPlaceChanged);
+}
+
+function onPlaceChanged() {
+    var place = autocomplete.getPlace();
+
+    if (!place.geometry) {
+        // User did not select a prediction; reset the input field
+        document.getElementById('autocomplete').placeholder = 'Enter a place';
+    } else {
+        // Display details about the valid place
+        document.getElementById('details').innerHTML = place.name;
+    }
+}
+
+// new google.maps.places.Autocomplete(document.getElementById('search'));
+// var ac = new google.maps.places.Autocomplete(document.getElementById('search'));
+// google.maps.event.addListener(ac, 'place_changed', function(){
+//     var place = ac.getPlace();
+//     console.log(place.formatted_address);
+//     console.log(place.url);
+//     console.log(place.geometry.location);
+// });
+
+
 let map;
 
+let lat = 30.266666;
+let lng = -97.733330;
+
+let markers = [/*Pass in API info*/];
+
 async function initMap() {
-    const position = { lat: -25.344, lng: 131.031 };
+    // Lat Long variables
+    const position = { lat: lat, lng: lng };
+    //  New map
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
+        zoom: 10,
         center: position
     });
 
-    const marker = new google.maps.Marker({
-        position: position,
-        map: map,
-        title: 'Uluru'
+    function addMarker(props) {
+        const marker = new google.maps.Marker({
+            position: props.coords,
+            map: map,
+            title: 'Uluru'
+            // icon:''
+        });
+
+        if(props.content) {
+            var infoWindow = new google.maps.InfoWindow({
+                content: props.content
+            })
+            marker.addListener('click', function(){
+                infoWindow.open(map, marker);
+            })
+        }
+    }
+
+
+    for (let i = 0; i < markers.length; i++ ) {
+        addMarker( markers[i]);
+    }
+    // Template for the map markers
+    addMarker({
+        coords:{ lat: lat, lng: lng },
+        content: "<h1>Austin</h1>"
     });
+
+
+    
+
 }
 
 
 initMap();
 
+// EXTRA
 
 
 
