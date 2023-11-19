@@ -48,6 +48,19 @@ app.get('/', (req, res) => {
     res.render('main.handlebars', 'restaurant.handlebars', { googleApiKey: process.env.GOOGLE_API_KEY });
 });
 
+app.get('/restaurant', (req, res) => {
+    // Fetch data
+    const restaurants = [
+        { name: 'Restaurant 1', address: 'Address 1' },
+        { name: 'Restaurant 2', address: 'Address 2' },
+        { name: 'Restaurant 3', address: 'Address 3' },
+    ];
+
+    // Render the restaurant.handlebars template data
+    res.render('restaurant.handlebars', { restaurants });
+});
+
+
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));

@@ -9,8 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,900;1,700&display=swap" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
-
 </head>
 
 <body>
@@ -104,18 +102,15 @@
     {{{ body }}}
     
 <script src="/js/style.js"></script>
+<script src="/js/search.js"></script>
 <script src="/js/googleMaps.js"></script>
 <script src="/js/restaurantPage.js"></script>
 
-{{!-- Google JS Maps Library --}}
+
+{{!-- Both Google JS Maps Lirary and Google Places Library --}}
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYNbRcyJ5B8V1_4ND-W2Z5OfYskYuj0sA&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYNbRcyJ5B8V1_4ND-W2Z5OfYskYuj0sA&libraries=geometry,places&callback=initMap">
 </script>
 
-{{!-- Googl Places Library --}}
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYNbRcyJ5B8V1_4ND-W2Z5OfYskYuj0sA&libraries=places&callback=initAutocomplete">
-</script>
-{{!-- {{GOOGLE_API_KEY}} --}}
 </body>
 </html>

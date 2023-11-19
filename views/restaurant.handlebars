@@ -9,25 +9,30 @@
 
             {{!-- <input id="autocomplete" placeholder="Enter a place" type="text" /> --}}
 
-        <form action="/restaurant" method="GET" class="form search"> <!--classname can change-->
-            <div class="form-group">
-            <label for="search">Enter City or ZipCode:</label>
-            <input type="text" id="search" name="search">
-            <button type="submit">Search</button>
-            {{#if loginError}}
-            <p class="error-message">{{loginError}}</p>
-            {{/if}}
-            </div>
-        </form>
-        <div class="map-card container card">
-            <h3>Map Below</h3>
-            <div id="map">
-                
-            </div>
+            <form action="/restaurant" method="GET" class="form search">
+                <div class="form-group">
+                    <label for="search">Enter City or ZipCode:</label>
+                    <input type="text" id="search" name="search">
+                    <button type="submit">Search</button>
+                    {{#if loginError}}
+                    <p class="error-message">{{loginError}}</p>
+                    {{/if}}
+                </div>
+            </form>
         </div>
 
-        <div class="search-results">
-            {{#each restaurants}}
+        <div id="results" class="search-results">
+
+            <h2>Restaurants</h2>
+            {{!-- <ul>
+                {{#each restaurants}}
+                <li>
+                    <strong>{{ name }}</strong> - {{ address }}
+                </li>
+                {{/each}}
+            </ul> --}}
+
+            {{!-- {{#each restaurants}}
             <div class="restaurant-card">
                 <h4 class="card-body">{{restaurant.name}} - {{restaurant.address}}</h4>
                 <div>
@@ -35,10 +40,12 @@
                     <button class="save-button" data-id="{{restaurant.id}}">Save</button>
                 </div>                
             </div>
-            {{/each}}
+            {{/each}} --}}
         </div>
+        <div class="map-card container card">
+                <h3>Map Below</h3>
+                <div id="map"></div>        
         </div>
-        
-
     </div>
 </main>
+
