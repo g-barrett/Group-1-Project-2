@@ -22,7 +22,7 @@ header {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     padding: 1em;
     background-color: transparent;
     position: sticky;
@@ -64,7 +64,7 @@ a:after {
 }
 
 a:hover:after { 
-    color: #D3FA52;
+    color: #D3FA52 ;
     transform: scaleX(1); 
 }
 
@@ -88,6 +88,120 @@ body {
         background-attachment: fixed;
         background-repeat: no-repeat;
 }
+
+.wrapper {
+    width: 420px; 
+    background: transparent;
+    color: transparent;
+    border: 2px solid #FDFFFC20; 
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper h2 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    /* background-color: #EC058E; */
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid #30332E;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #FDFFFC;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: #FDFFFC;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    /* bottom: 5px; */
+
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+    padding: 5px;
+}
+
+.remember-forgot label input {
+    accent-color: #FDFFFC;
+    margin: 3px;
+
+}
+
+a {
+    color: #FDFFFC;    
+};
+
+a:hover {
+    color: #FDFFFC !important;    
+}
+
+#remember-forgot a {
+    color: #FDFFFC;    
+    text-decoration: none;
+
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+    color: #FDFFFC;    
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    /* background: #FDFFFC; */
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #30332E;
+    font-weight: 700;
+}
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+    text-align: center;
+}
+
+.register-link p a {
+    color: #FDFFFC;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+
 
 /* .dropdown-content {
     display: none;
@@ -129,6 +243,7 @@ h3 {
     max-width: 960px;  /* Max width for container */
     display: flex;
     flex-direction: column;  /* Stack the forms */
+    justify-content: flex-start;
     align-items: center; /* Center the forms horizontally */
     gap: 20px; /* Reduced space between forms */   
 }
@@ -141,14 +256,11 @@ h3 {
 
 
 form {
-    width: 100%; 
     max-width: 750px; 
     height: auto;
-    background: #043CAD;
     margin: 10px;
     padding: 20px 69px;
     border-radius: 8px;
-    border: 5px solid #D3FA52; 
     display: flex;
     flex-direction: column; /* Stack form elements */
     text-align: center;
@@ -222,14 +334,18 @@ div {
     margin-bottom: 10px;
 }
 
+div, #remember-forgot {
+    margin: 10px !important;
+}
+
+p {
+
+}
+
 #map {
     height: 700px; 
     width: 500px;
 }
-
-/* #results {
-    display: none;
-}   */
 
 label {
     display: block;
@@ -245,7 +361,7 @@ input[type=email] {
     padding: 10px;
     border: 3px solid #D3FA52;
     background: #30332E;
-    color: #FDFFFC;
+    /* color: #FDFFFC; */
     border-radius: 4px;
     margin-bottom: 3px; /* Space between inputs */
 }
@@ -264,7 +380,7 @@ button[type=submit] {
 
 button[type=submit]:hover {
     background: #EC058E;
-    color: #FDFFFC;
+    /* color: #FDFFFC; */
 }
 
 .error-message {
