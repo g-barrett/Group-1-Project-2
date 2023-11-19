@@ -7,3 +7,20 @@ window.addEventListener("scroll", function () {
 		header.classList.remove("navbar-shadow");
 	}
 });
+
+function showSignupForm() {
+	var signupWrapper = document.querySelector(".auth-container > .wrapper");
+	var loginWrapper = document.getElementById("login-section");
+
+	// Toggle visibility
+	if (
+		signupWrapper.style.display === "none" ||
+		signupWrapper.style.display === ""
+	) {
+		signupWrapper.style.display = "block"; // Show signup form and its wrapper
+		loginWrapper.style.display = "none"; // Hide login section
+	} else {
+		signupWrapper.style.display = "none"; // Hide signup form and its wrapper
+		loginWrapper.style.display = "block"; // Show login section
+	}
+}

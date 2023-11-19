@@ -103,6 +103,7 @@ function initMap() {
 		}
 	);
 }
+
 // Generate map coordinates upon search btn press
 function searchAndDisplay(query) {
 	var geocoder = new google.maps.Geocoder();
@@ -151,6 +152,7 @@ function onPlaceChanged() {
 		},
 		callback
 	);
+	// injectCSS();
 }
 
 function callback(results, status) {

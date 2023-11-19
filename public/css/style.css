@@ -89,6 +89,10 @@ body {
         background-repeat: no-repeat;
 }
 
+p {
+    justify-content: center;
+}
+
 .wrapper {
     width: 420px; 
     background: transparent;
@@ -106,11 +110,13 @@ body {
 }
 
 .wrapper .input-box {
+    margin: 30px auto; /* Center input box */
     position: relative;
     width: 100%;
     height: 50px;
     /* background-color: #EC058E; */
-    margin: 30px 0;
+    /* margin: 30px 0; */
+    text-align: center;
 }
 
 .input-box input {
@@ -132,6 +138,7 @@ body {
 
 .input-box i {
     position: absolute;
+    /* justify-content: center; */
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
@@ -144,8 +151,8 @@ body {
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
-    margin: -15px 0 15px;
-    padding: 5px;
+    /* margin: -15px 0 15px; */
+    /* padding: 5px; */
 }
 
 .remember-forgot label input {
@@ -165,7 +172,6 @@ a:hover {
 #remember-forgot a {
     color: #FDFFFC;    
     text-decoration: none;
-
 }
 
 .remember-forgot a:hover {
@@ -174,6 +180,8 @@ a:hover {
 }
 
 .wrapper .btn {
+    text-align: center; /* Center button text */
+    margin: 0 auto;
     width: 100%;
     height: 45px;
     /* background: #FDFFFC; */
@@ -201,8 +209,6 @@ a:hover {
     text-decoration: underline;
 }
 
-
-
 /* .dropdown-content {
     display: none;
     position: absolute;
@@ -217,6 +223,7 @@ a:hover {
     } */
 
 h1 {
+    text-align: center;
     font-size: 2.5em;
     color: #D3FA52; /* Bright yellow for headers */
     text-shadow: 2px 3px 1px #EC058E;
@@ -246,6 +253,7 @@ h3 {
     justify-content: flex-start;
     align-items: center; /* Center the forms horizontally */
     gap: 20px; /* Reduced space between forms */   
+    /* text-align: center; */
 }
 
 .container-row {
@@ -266,6 +274,7 @@ form {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    
 }
 
 .card {
@@ -290,11 +299,12 @@ form {
     width: 100%; 
 }
 
+
 .restaurant-card {
     width: 100%; 
     max-width: 250px;
     height: auto; 
-    background: #043CAD;
+    /* background: #043CAD; */
     margin: 5px;
     padding: 20px 69px;
     border-radius: 8px;
@@ -329,23 +339,49 @@ form {
     background-color: #EC058E; 
 }
 
-
-div {
-    margin-bottom: 10px;
+/* reigster forms */
+.auth-container > .wrapper {
+    display: none;
 }
 
-div, #remember-forgot {
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block; 
+}
+
+
+form>div>p {
     margin: 10px !important;
+    /* padding: 10px; */
+    color: #FDFFFC;
 }
 
-p {
+form>div>a {
+    margin: 10px !important;
+    color: #FDFFFC;
 
+}
+
+
+#login-form, #signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #map {
     height: 700px; 
     width: 500px;
+    /* background-color: transparent; */
 }
+
+/* element .style {
+    background-color: transparent;
+} */
+
 
 label {
     display: block;
@@ -361,7 +397,7 @@ input[type=email] {
     padding: 10px;
     border: 3px solid #D3FA52;
     background: #30332E;
-    /* color: #FDFFFC; */
+    color: #FDFFFC;
     border-radius: 4px;
     margin-bottom: 3px; /* Space between inputs */
 }
@@ -387,6 +423,59 @@ button[type=submit]:hover {
     color: #D3FA52;
     text-shadow: 2px 3px 2px #EC058E;
 }
+
+/* TESTING RESTAURANT PAGE */
+
+/* Styling for the search form */
+.container .form.search {
+    background: transparent;
+    border: 2px solid #FDFFFC20;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto; /* Center the form */
+    width: auto;
+}
+
+/* Styling for the search form input and button */
+.container .form.search input,
+.container .form.search button {
+    border-radius: 40px;
+    box-shadow: 0 0 10px #30332E;
+    padding: auto;
+}
+
+
+.restaurant-card {
+    border: 2px solid #FDFFFC20;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+/* Styling for the map card */
+.map-card {
+    background: none;
+    border: 2px solid #FDFFFC20;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    padding: 20px;
+    /* margin: auto; */
+    /* Maintain the original size to fit the map */
+    /* height: 700px; 
+    width: 500px; */
+}
+
+/* .gm-style  div {
+    background-color: none !important;   
+    margin: 0; 
+} */
+
 /* Responsive Layout */
 @media (min-width: 600px) {
     form {

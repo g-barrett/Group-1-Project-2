@@ -57,6 +57,11 @@ Enter a location in the search bar on the application's homepage. The app will d
 - [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)
 - [Bootstrap](https://getbootstrap.com/)
 
+## Contributors
+
+- Andrew Tullos - [GitHub](https://github.com/AndrewTullos)
+- Catherine Parker - [GitHub](https://github.com/caparker23)
+
 ## Contributing
 
 Contributions to improve the project are welcome. Please follow these steps:

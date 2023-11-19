@@ -62,6 +62,10 @@ app.get("/restaurant", (req, res) => {
 	res.render("restaurant.handlebars", { restaurants });
 });
 
+app.get("/teapot", (req, res) => {
+	res.status(418).send("I'm a teapot");
+});
+
 sequelize.sync({ force: false }).then(() => {
 	app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
 });
