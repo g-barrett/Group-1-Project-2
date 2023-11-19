@@ -1,5 +1,9 @@
 # Restaurant Locator Application
 
+![GitHub](https://img.shields.io/github/license/your-username/your-repo)
+![Node.js Version](https://img.shields.io/badge/node-%3E%3D%2012.0.0-brightgreen)
+![npm Version](https://img.shields.io/badge/npm-%3E%3D%206.0.0-blue)
+
 ## Overview
 
 The Restaurant Locator is a web-based application designed to help users find the top three restaurant suggestions within their vicinity. Leveraging the Google Maps API, it provides an intuitive interface for locating restaurants and cafes, complete with a map and detailed information about each establishment.
