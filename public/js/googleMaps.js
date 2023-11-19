@@ -29,6 +29,66 @@ function initMap() {
 		// Austin coordinates
 		center: { lat: 30.266666, lng: -97.73333 },
 		zoom: 15,
+		styles: [
+			{
+				featureType: "road",
+				elementType: "labels",
+				stylers: [{ visibility: "off" }],
+			},
+			{
+				elementType: "labels.text.fill",
+				stylers: [{ color: "#EC058E" }],
+			},
+			{
+				elementType: "labels.text.stroke",
+				stylers: [{ color: "#D3FA52" }],
+			},
+			{
+				featureType: "landscape.man_made",
+				elementType: "geometry",
+				stylers: [{ color: "#FDFFFC" }],
+			},
+			{
+				featureType: "landscape.natural",
+				elementType: "geometry",
+				stylers: [{ color: "#D3FA52" }],
+			},
+			{
+				featureType: "road.highway",
+				elementType: "geometry",
+				stylers: [{ color: "#D3FA52" }],
+			},
+			{
+				featureType: "road",
+				elementType: "geometry.fill",
+				stylers: [{ color: "#D3FA52" }],
+			},
+			{
+				featureType: "road",
+				elementType: "geometry.stroke",
+				stylers: [{ color: "#FDFFFC" }],
+			},
+			{
+				featureType: "road.arterial",
+				elementType: "geometry.fill",
+				stylers: [{ color: "#EC058E" }],
+			},
+			{
+				featureType: "road.local",
+				elementType: "geometry.fill",
+				stylers: [{ color: "black" }],
+			},
+			{
+				featureType: "landscape",
+				elementType: "geometry",
+				stylers: [{ color: "#30332E" }],
+			},
+			{
+				featureType: "water",
+				elementType: "geometry",
+				stylers: [{ color: "#043CAD" }],
+			},
+		],
 	});
 
 	placesService = new google.maps.places.PlacesService(map);
