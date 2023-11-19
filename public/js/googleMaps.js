@@ -1,202 +1,151 @@
 let autocomplete;
 let map;
 var placesService;
-// let lat = 30.266666;
-// let lng = -97.733330;
+
+// JQuery Code
+// BOOTSTRAP CAROUSEL
+$(document).ready(function () {
+	// Initialize the carousel
+	$("#imageCarousel").carousel();
+	$("#restaurantCarousel").carousel({
+		interval: false,
+	});
+	$(".form.search").on("submit", function (e) {
+		e.preventDefault();
+		var query = $("#search").val();
+		searchAndDisplay(query);
+		$("#results").show();
+	});
+});
 
 // Google required callback once operating
 function initMap() {
-  // Creates Google Map
-  // var map = new google.maps.Map(mapDiv, {
+	window.restaurantCount = 0;
 
-  map = new google.maps.Map(document.getElementById("map"), {
-    // Austin coordinates
-    center: { lat: 30.266666, lng: -97.73333 },
-    zoom: 15,
-  });
+	// Creates Google Map
+	// var map = new google.maps.Map(mapDiv, {
 
-  placesService = new google.maps.places.PlacesService(map);
+	map = new google.maps.Map(document.getElementById("map"), {
+		// Austin coordinates
+		center: { lat: 30.266666, lng: -97.73333 },
+		zoom: 15,
+	});
 
-  // Autocomplete textbox creation
-  autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById("search"),
-    {
-      types: ["geocode"],
-      componentRestrictions: { country: ["US"] },
-      // fields: ['address_components','adr_address', 'place_id', 'geometry', 'opening_hours', 'secondary_opening_hours', 'name', 'atmosphere', 'website']
-    }
-  );
+	placesService = new google.maps.places.PlacesService(map);
 
-  autocomplete.addListener("place_changed", onPlaceChanged);
+	// Autocomplete textbox creation
+	autocomplete = new google.maps.places.Autocomplete(
+		document.getElementById("search"),
+		{
+			types: ["geocode"],
+			componentRestrictions: { country: ["US"] },
+			// fields: ['address_components','adr_address', 'place_id', 'geometry', 'opening_hours', 'secondary_opening_hours', 'name', 'atmosphere', 'website']
+		}
+	);
+}
+// Generate map coordinates upon search btn press
+function searchAndDisplay(query) {
+	var geocoder = new google.maps.Geocoder();
+
+	geocoder.geocode({ address: query }, function (results, status) {
+		if (status === "OK") {
+			map.setCenter(results[0].geometry.location);
+			var searchLocation = results[0].geometry.location;
+
+			placesService.nearbySearch(
+				{
+					location: searchLocation,
+					radius: "500",
+					type: ["restaurant", "cafe"],
+					keyword: "dining, food, drinks, lunch, breakfast, dinner",
+				},
+				callback
+			);
+		} else {
+			alert("Geocode was not successful for the following reason: " + status);
+		}
+	});
 }
 
 // Initializes new map after search and finds nearby places
 function onPlaceChanged() {
-  document.getElementById("results").innerHTML = "";
+	document.getElementById("results").innerHTML = "";
 
-  var place = autocomplete.getPlace();
-  console.log(place);
+	var place = autocomplete.getPlace();
+	console.log(place);
 
-  // Creates Google Map
-  map = new google.maps.Map(document.getElementById("map"), {
-    // Austin coordinates
-    center: place.geometry.location,
-    zoom: 15,
-  });
+	// Creates Google Map
+	map = new google.maps.Map(document.getElementById("map"), {
+		// New map coordinates
+		center: place.geometry.location,
+		zoom: 15,
+	});
 
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(
-    {
-      location: place.geometry.location,
-      radius: "500",
-      type: ["restaurant", "cafe"],
-    },
-    callback
-  );
+	service = new google.maps.places.PlacesService(map);
+	service.nearbySearch(
+		{
+			location: place.geometry.location,
+			radius: "500",
+			type: ["restaurant", "cafe"],
+			keyword: "dining, food, drinks, lunch, breakfast, dinner",
+		},
+		callback
+	);
 }
 
 function callback(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    console.log(results.length);
-    for (let i = 0; i < results.length; i++) {
-      createMarker(results[i]);
-    }
-  }
+	if (status === google.maps.places.PlacesServiceStatus.OK) {
+		const carouselInner = document.querySelector(
+			"#restaurantCarousel .carousel-inner"
+		);
+		carouselInner.innerHTML = "";
+		let carouselItem = null;
+		let rowDiv = null;
+		let count = 0;
+
+		results.forEach((restaurant, index) => {
+			if (count % 3 === 0) {
+				// Every three restaurants, create a new carousel item and row
+				carouselItem = document.createElement("div");
+				carouselItem.className =
+					"carousel-item" + (index === 0 ? " active" : "");
+				rowDiv = document.createElement("div");
+				rowDiv.className = "row"; // Bootstrap row class
+				carouselItem.appendChild(rowDiv);
+				carouselInner.appendChild(carouselItem);
+			}
+
+			// Create a column for each restaurant
+			let colDiv = document.createElement("div");
+			colDiv.className = "col-md-4";
+
+			// Create a card for the restaurant
+			let cardDiv = document.createElement("div");
+			cardDiv.className = "restaurant-card";
+
+			// Add restaurant details to the card
+			let restaurantName = document.createElement("h5");
+			restaurantName.textContent = restaurant.name;
+			cardDiv.appendChild(restaurantName);
+
+			if (restaurant.photos) {
+				let restaurantImage = document.createElement("img");
+				restaurantImage.src = restaurant.photos[0].getUrl();
+				restaurantImage.className = "img-fluid"; // Responsive images
+				cardDiv.appendChild(restaurantImage);
+			}
+
+			// Maybe add ratings/likes/etc here?
+
+			// Append the card to the column
+			colDiv.appendChild(cardDiv);
+
+			// Append the column to the current row
+			rowDiv.appendChild(colDiv);
+
+			count++;
+		});
+
+		$("#restaurantCarousel").carousel();
+	}
 }
-
-// Perform a nearby search based on the selected place
-// placesService.nearbySearch(
-//     {
-//         location: place.geometry.location,
-//         // Adjust the radius as needed
-//         radius: 500,
-//         types: ['geocode'],
-//         componentRestrictions: {'country': ['US']},
-//         fields: ['address_components','adr_address', 'place_id', 'geometry', 'opening_hours', 'secondary_opening_hours', 'name', 'atmosphere', 'website']
-//     },
-//     displayResults
-// );
-// }
-
-// function displayResults(results, status) {
-//     if (status === google.maps.places.PlacesServiceStatus.OK) {
-//         var resultsDiv = document.getElementById('results');
-//         resultsDiv.innerHTML = '';
-
-//         for (var i = 0; i < results.length; i++) {
-//             var place = results[i];
-//             var name = place.name;
-//             var address = place.vicinity;
-
-//             var resultItem = document.createElement('div');
-//             resultItem.innerHTML = '<strong>' + name + '</strong><br>' + address;
-//             resultsDiv.appendChild(resultItem);
-//         }
-//     }
-// }
-
-// Testing does render correctly
-
-// var sampleResults = [
-//     { name: 'Restaurant 1', vicinity: 'Address 1' },
-//     { name: 'Restaurant 2', vicinity: 'Address 2' },
-// ];
-
-// Call displayResults with the sample data
-// displayResults(sampleResults, google.maps.places.PlacesServiceStatus.OK);
-
-/*
-INCASE I FUCK UP
-
-let autocomplete;
-let map;
-var placesService;
-// let lat = 30.266666;
-// let lng = -97.733330;
-
-// Initializes Map
-function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-    // Austin coordinates
-        center: { lat: 30.266666, lng: -97.733330 }, 
-        zoom: 15,
-    });
-
-    placesService = new google.maps.places.PlacesService(map);
-
-    autocomplete = new google.maps.places.Autocomplete(
-            document.getElementById('search'),
-            {
-            types: ['restaurant', 'cafe'],
-            componentRestrictions: { country: ['US'] },
-            }
-        );
-
-    autocomplete.addListener('place_changed', onPlaceChanged);
-}
-
-// Autocomplete search bar
-function initAutocomplete() {
-    autocomplete = new google.maps.places.Autocomplete(
-        document.getElementById('search'),
-        {
-            types: ['geocode'],
-            componentRestrictions: {'country': ['US']},
-            // fields: ['address_components','adr_address', 'place_id', 'geometry', 'opening_hours', 'secondary_opening_hours', 'name', 'atmosphere', 'website']
-        });
-
-        autocomplete.addListener('place_changed', onPlaceChanged);
-}
-
-// Initializes new map When map search clicked
-function onPlaceChanged() {
-    var place = autocomplete.getPlace();
-
-    // Exits search if nothing selected
-    if (!place.geometry) {
-        return;
-    }
-
-    // Perform a nearby search based on the selected place
-    placesService.nearbySearch(
-        {
-            location: place.geometry.location,
-            // Adjust the radius as needed
-            radius: 500, 
-            types: ['geocode'],
-            componentRestrictions: {'country': ['US']},
-            fields: ['address_components','adr_address', 'place_id', 'geometry', 'opening_hours', 'secondary_opening_hours', 'name', 'atmosphere', 'website']
-        },
-        displayResults
-    );
-}
-
-function displayResults(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-        var resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = '';
-
-        for (var i = 0; i < results.length; i++) {
-            var place = results[i];
-            var name = place.name;
-            var address = place.vicinity;
-
-            var resultItem = document.createElement('div');
-            resultItem.innerHTML = '<strong>' + name + '</strong><br>' + address;
-            resultsDiv.appendChild(resultItem);
-        }
-    }
-}
-
-// Testing does render correctly
-
-var sampleResults = [
-    { name: 'Restaurant 1', vicinity: 'Address 1' },
-    { name: 'Restaurant 2', vicinity: 'Address 2' },
-];
-
-// Call displayResults with the sample data
-displayResults(sampleResults, google.maps.places.PlacesServiceStatus.OK);
-
-
-*/

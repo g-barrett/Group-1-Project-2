@@ -1,8 +1,9 @@
-// window.onscroll = function() {
-//     var navbar = document.getElementById('navbar');
-//     if (window.pageYOffset > 0) {
-//         navbar.classList.add('navbar-scrolled');
-//     } else {
-//         navbar.classList.remove('navbar-scrolled');
-//     }
-// };
+// Header shadow on scroll
+window.addEventListener("scroll", function () {
+	var header = document.querySelector("header");
+	if (window.scrollY > 0) {
+		header.classList.add("navbar-shadow");
+	} else {
+		header.classList.remove("navbar-shadow");
+	}
+});

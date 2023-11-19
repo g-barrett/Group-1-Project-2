@@ -3,27 +3,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    /* padding: 20px; */
-    background-color: #30332E; 
-    color: #FDFFFC; 
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    min-height: 100vh; 
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-        /* Set the background image */
-        background-image: url('../images/nomnav.png');
-        background-size: cover;
-        background-position: top center;
-        background-repeat: no-repeat;
-}
+/* NOTE: body was here not sure if this will mess up css  */
 
 header {
     text-align: center;
@@ -34,8 +17,8 @@ header {
     padding: 0; /* No padding */
     border: none; /* No border */
     background-clip: content-box;
-    padding: 20px 0; 
 }
+
 
 .navbar {
     display: flex;
@@ -56,24 +39,56 @@ header {
     text-decoration: none;
     color: #D3FA52; /* Bright yellow for headers */
     text-shadow: 2px 3px 1px #EC058E;
-    margin: 0 1em;
+    /* margin: 0 1em; */
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
+    transition: color 250ms ease-in-out; /* Add a color transition */
 }
 
-.navbar-scrolled {
-    box-shadow: 0 5px 5px -5px #D3FA52;
+.nav-link:hover {
+    color: #D3FA52; /* Keep the same color on hover */
+}
+
+.navbar-shadow {
+    box-shadow: 0 05px 05px -05px #D3FA52;
+    transition: box-shadow 500ms ease-in-out;
 }
 
 a:after {
     display: flex;
     content: '';
     border-bottom: solid 3px #043CAD;  
+    color: #D3FA52;
     transform: scaleX(0);  
     transition: transform 250ms ease-in-out;
 }
 
-a:hover:after { transform: scaleX(1); }
+a:hover:after { 
+    color: #D3FA52;
+    transform: scaleX(1); 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    /* padding: 20px; */
+    background-color: #30332E; 
+    color: #FDFFFC; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    /* min-height: 100vh;  */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+        /* Set the background image */
+        background-image: url('../images/nomnav.png');
+        background-size: cover;
+        background-position: top center;
+        background-attachment: fixed;
+
+        background-repeat: no-repeat;
+}
 
 .dropdown-content {
     display: none;
@@ -96,7 +111,15 @@ h1 {
     font-weight: bold;
 }    
 
-h2, h3 {
+h2 {
+    color: #D3FA52; /* Bright yellow for headers */
+    text-shadow: 2px 3px 1px #EC058E;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+h3 {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -115,8 +138,10 @@ h2, h3 {
     display: flex;
     flex-direction: row;
     gap: 20px; /* Reduced space between forms */   
-
 }
+
+
+
 
 form {
     width: 100%; 
@@ -150,6 +175,52 @@ form {
     font-weight: 400;
 }
 
+/* Carousel Syling */
+
+.carousel-item {
+    width: 100%; 
+}
+
+.restaurant-card {
+    width: 100%; 
+    max-width: 250px;
+    height: auto; 
+    background: #043CAD;
+    margin: 5px;
+    padding: 20px 69px;
+    border-radius: 8px;
+    border: 5px solid #D3FA52; 
+    display: flex;
+    flex-direction: column; /* Stack form elements */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+/* Style the carousel arrows */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 30px; 
+    height: 30px; 
+    background-color: #D3FA52; 
+    opacity: 0.9; 
+    border-radius: 50%;
+}
+
+    /* Style the arrow icons */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+    background-color: #043CAD; 
+    border-radius: 50%; 
+}
+
+    /* Change the color of the arrows on hover */
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+    background-color: #EC058E; 
+}
+
+
 div {
     margin-bottom: 10px;
 }
@@ -158,6 +229,10 @@ div {
     height: 700px; 
     width: 500px;
 }
+
+/* #results {
+    display: none;
+}   */
 
 label {
     display: block;

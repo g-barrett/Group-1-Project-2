@@ -6,7 +6,7 @@
     <div class="container">
         {{!-- Side by side boxes --}}
         <div class="container">
-
+            
             {{!-- <input id="autocomplete" placeholder="Enter a place" type="text" /> --}}
 
             <form action="/restaurant" method="GET" class="form search">
@@ -21,26 +21,24 @@
             </form>
         </div>
 
-        <div id="results" class="search-results">
-
-            <h2>Restaurants</h2>
-            {{!-- <ul>
-                {{#each restaurants}}
-                <li>
-                    <strong>{{ name }}</strong> - {{ address }}
-                </li>
-                {{/each}}
-            </ul> --}}
-
-            {{!-- {{#each restaurants}}
-            <div class="restaurant-card">
-                <h4 class="card-body">{{restaurant.name}} - {{restaurant.address}}</h4>
-                <div>
-                    <button class="like-button" data-id="{{restaurant.id}}">Like</button>
-                    <button class="save-button" data-id="{{restaurant.id}}">Save</button>
-                </div>                
+        <div id="results" class="search-results" style="display: none;">
+            <div id="results" class="search-results">
+                <h2>Restaurants</h2>
+                <div id="restaurantCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {{!-- Dynamic Search Results Rendered Below --}}
+                    </div>
+                    <a class="carousel-control-prev" href="#restaurantCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#restaurantCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
-            {{/each}} --}}
+
         </div>
         <div class="map-card container card">
                 <h3>Map Below</h3>
