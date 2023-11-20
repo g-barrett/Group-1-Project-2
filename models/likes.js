@@ -21,7 +21,7 @@ const Likes = sequelize.define('Likes', {
 });
 
 // Associations
-User.belongsToMany(Restaurant, { through: Likes });
+User.hasMany(Restaurant, { through: Likes });
 Restaurant.belongsToMany(User, { through: Likes });
 
 
