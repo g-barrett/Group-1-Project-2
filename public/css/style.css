@@ -3,46 +3,246 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* NOTE: body was here not sure if this will mess up css  */
+
+header {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px; 
+    background-color: transparent; 
+    padding: 0; /* No padding */
+    border: none; /* No border */
+    background-clip: content-box;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: right;
+    padding: 1em;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    margin-left: auto;
+    display: flex;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #D3FA52; /* Bright yellow for headers */
+    text-shadow: 2px 3px 1px #EC058E;
+    /* margin: 0 1em; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    transition: color 250ms ease-in-out; /* Add a color transition */
+}
+
+.nav-link:hover {
+    color: #D3FA52; /* Keep the same color on hover */
+}
+
+.navbar-shadow {
+    box-shadow: 0 5px 25px -5px #808080;
+    transition: box-shadow 500ms ease-in-out;
+}
+
+a:after {
+    display: flex;
+    content: '';
+    border-bottom: solid 3px #043CAD;  
+    color: #D3FA52;
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+
+a:hover:after { 
+    color: #D3FA52 ;
+    transform: scaleX(1); 
 }
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    padding: 20px;
+    /* padding: 20px; */
     background-color: #30332E; 
     color: #FDFFFC; 
     display: flex;
     flex-direction: column;
     align-items: center; 
     justify-content: center; 
-    min-height: 100vh; 
+    /* min-height: 100vh;  */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
         /* Set the background image */
         background-image: url('../images/nomnav.png');
         background-size: cover;
-        background-position: center;
+        background-position: top center;
+        background-attachment: fixed;
         background-repeat: no-repeat;
 }
 
-header {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 20px; 
-    background-color: transparent; 
-    padding: 20px 0; 
+p {
+    justify-content: center;
 }
 
+.wrapper {
+    width: 420px; 
+    background: transparent;
+    color: transparent;
+    border: 2px solid #FDFFFC20; 
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper h2 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    margin: 30px auto; /* Center input box */
+    position: relative;
+    width: 100%;
+    height: 50px;
+    /* background-color: #EC058E; */
+    /* margin: 30px 0; */
+    text-align: center;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid #30332E;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #FDFFFC;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: #FDFFFC;
+}
+
+.input-box i {
+    position: absolute;
+    /* justify-content: center; */
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    /* bottom: 5px; */
+
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    /* margin: -15px 0 15px; */
+    /* padding: 5px; */
+}
+
+.remember-forgot label input {
+    accent-color: #FDFFFC;
+    margin: 3px;
+
+}
+
+a {
+    color: #FDFFFC;    
+};
+
+a:hover {
+    color: #FDFFFC !important;    
+}
+
+#remember-forgot a {
+    color: #FDFFFC;    
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+    color: #FDFFFC;    
+}
+
+.wrapper .btn {
+    text-align: center; /* Center button text */
+    margin: 0 auto;
+    width: 100%;
+    height: 45px;
+    /* background: #FDFFFC; */
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #30332E;
+    font-weight: 700;
+}
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+    text-align: center;
+}
+
+.register-link p a {
+    color: #FDFFFC;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+/* .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    } */
+
 h1 {
+    text-align: center;
     font-size: 2.5em;
     color: #D3FA52; /* Bright yellow for headers */
+    text-shadow: 2px 3px 1px #EC058E;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }    
 
 h2 {
+    color: #D3FA52; /* Bright yellow for headers */
+    text-shadow: 2px 3px 1px #EC058E;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+}
 
+h3 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
 .container {
@@ -50,15 +250,39 @@ h2 {
     max-width: 960px;  /* Max width for container */
     display: flex;
     flex-direction: column;  /* Stack the forms */
+    justify-content: flex-start;
     align-items: center; /* Center the forms horizontally */
-    gap: 10px; /* Reduced space between forms */
+    gap: 20px; /* Reduced space between forms */   
+    /* text-align: center; */
+}
+
+.container-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Reduced space between forms */   
+}
+
+
+form {
+    max-width: 750px; 
+    height: auto;
+    margin: 10px;
+    padding: 20px 69px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Stack form elements */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     
 }
 
-form {
+.card {
     width: 100%; 
-    max-width: 750px; 
+    max-width: 750px;
+    height: auto; 
     background: #043CAD;
+    margin: 10px;
     padding: 20px 69px;
     border-radius: 8px;
     border: 5px solid #D3FA52; 
@@ -69,20 +293,111 @@ form {
     font-weight: 400;
 }
 
-div {
-    margin-bottom: 10px;
+/* Carousel Syling */
+
+.carousel-item {
+    width: 100%; 
 }
+
+
+.restaurant-card {
+    width: 100%; 
+    max-width: 250px;
+    height: auto; 
+    /* background: #043CAD; */
+    margin: 5px;
+    padding: 20px 69px;
+    border-radius: 8px;
+    border: 5px solid #D3FA52; 
+    display: flex;
+    flex-direction: column; /* Stack form elements */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+/* Style the carousel arrows */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 30px; 
+    height: 30px; 
+    background-color: #D3FA52; 
+    opacity: 0.9; 
+    border-radius: 50%;
+}
+
+    /* Style the arrow icons */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+    background-color: #043CAD; 
+    border-radius: 50%; 
+}
+
+    /* Change the color of the arrows on hover */
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+    background-color: #EC058E; 
+}
+
+/* reigster forms */
+.auth-container > .wrapper {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block; 
+}
+
+
+form>div>p {
+    margin: 10px !important;
+    /* padding: 10px; */
+    color: #FDFFFC;
+}
+
+form>div>a {
+    margin: 10px !important;
+    color: #FDFFFC;
+
+}
+
+.center-map {
+    display: flex;
+    align-items: center;
+}
+
+#login-form, #signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#map {
+    height: 700px; 
+    width: 500px;
+    /* background-color: transparent; */
+}
+
+/* element .style {
+    background-color: transparent;
+} */
+
 
 label {
     display: block;
     margin-bottom: 5px;
     color: #FDFFFC;
+    
 }
 
 input[type=text],
 input[type=password],
 input[type=email] {
-    width: calc(100% - 22px); /* Adjust width to account for padding and border */
+    width: calc(100% - 22px); 
     padding: 10px;
     border: 3px solid #D3FA52;
     background: #30332E;
@@ -105,14 +420,90 @@ button[type=submit] {
 
 button[type=submit]:hover {
     background: #EC058E;
-    color: #FDFFFC;
+    /* color: #FDFFFC; */
 }
+
+.error-message {
+    color: #D3FA52;
+    text-shadow: 2px 3px 2px #EC058E;
+}
+
+/* TESTING RESTAURANT PAGE */
+
+/* Styling for the search form */
+.container .form.search {
+    background: transparent;
+    border: 2px solid #FDFFFC20;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto; /* Center the form */
+    width: auto;
+}
+
+/* Styling for the search form input and button */
+.container .form.search input,
+.container .form.search button {
+    border-radius: 40px;
+    box-shadow: 0 0 10px #30332E;
+    padding: auto;
+}
+
+
+.restaurant-card {
+    border: 2px solid #FDFFFC20;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+/* Styling for the map card */
+.map-card {
+    background: none;
+    border: 2px solid #FDFFFC20;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    padding: 20px;
+    /* margin: auto; */
+    /* Maintain the original size to fit the map */
+    /* height: 700px; 
+    width: 500px; */
+}
+
+/* .gm-style  div {
+    background-color: none !important;   
+    margin: 0; 
+} */
 
 /* Responsive Layout */
 @media (min-width: 600px) {
     form {
-        margin: 0 auto; 
+        margin: 15px auto; 
         width: 90%; 
         max-width: 750px; 
     }
 }
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('path-to-desktop-image.jpg');
+        background-size: cover;
+        background-position:left;
+        background-repeat: no-repeat;
+        background-image: url('../images/nomnav.png');
+    }
+    .nav-link:hover {
+        color: #EC058E; 
+        text-shadow: 2px 3px 1px #D3FA52;
+    }
+    #map {
+        height: 400px; 
+        width: 100%;
+    }
+}
+
