@@ -365,6 +365,10 @@ form>div>a {
 
 }
 
+.center-map {
+    display: flex;
+    align-items: center;
+}
 
 #login-form, #signup-form {
     display: flex;
