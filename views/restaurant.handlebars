@@ -1,27 +1,66 @@
 <main>
-    <h2>Find a restaurant</h2>
-    <h3>Search nearby restaurants</h3>
+	<h2>Find a restaurant</h2>
+	<h3>Search nearby restaurants</h3>
 
-    <form action="/restaurant" method="GET" class="form search"> <!--classname can change-->
-        <div class="form-group">
-        <label for="search">Enter City or ZipCode:</label>
-        <input type="text" id="search" name="search">
-        <button type="submit">Search</button>
-        {{#if loginError}}
-        <p class="error-message">{{loginError}}</p>
-        {{/if}}
-        </div>
-    </form>
+	{{! Stacking the boxes }}
+	<div class="container">
+		{{! Side by side boxes }}
+		<div class="container">
 
-    <div class="search-results">
-        {{#each restaurants}}
-        <div class="restaurant-card">
-            <h4 class="card-body">{{restaurant.name}} - {{restaurant.address}}</h4>
-            <div>
-                <button class="like-button" data-id="{{restaurant.id}}">Like</button>
-                <button class="save-button" data-id="{{restaurant.id}}">Save</button>
-            </div>                
-        </div>
-        {{/each}}
-    </div>
+			{{! <input id="autocomplete" placeholder="Enter a place" type="text" /> }}
+
+			<form action="/restaurant" method="GET" class="form search">
+				<div class="form-group">
+					<label for="search">Enter City or ZipCode:</label>
+					<input type="text" id="search" name="search" />
+					<button type="submit">Search</button>
+					{{!-- {{#if loginError}}
+						<p class="error-message">{{loginError}}</p>
+					{{/if}} --}}
+				</div>
+			</form>
+		</div>
+
+		<div
+			id="results"
+			class="search-results"
+			style="display: none; position:relative;"
+		>
+			<div id="results" class="search-results">
+				<h2>Restaurants</h2>
+				<div
+					id="restaurantCarousel"
+					class="carousel slide"
+					data-ride="carousel"
+				>
+					<div class="carousel-inner">
+						{{! Dynamic Search Results Rendered Below }}
+					</div>
+					<a
+						class="carousel-control-prev"
+						href="#restaurantCarousel"
+						role="button"
+						data-slide="prev"
+					>
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a
+						class="carousel-control-next"
+						href="#restaurantCarousel"
+						role="button"
+						data-slide="next"
+					>
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="map-card card">
+			<h3>Map Below</h3>
+			<div id="map"></div>
+		</div>
+	</div>
 </main>
