@@ -1,6 +1,11 @@
 {
   "name": "group-1-project-2",
   "version": "1.0.0",
+  "version": "1.0.0",
+  "engines": {
+    "node": "18.18.0",
+    "npm": "10.2.4"
+  },
   "description": "Our second team project for our coding bootcamp",
   "main": "index.js",
   "scripts": {
