@@ -18,4 +18,5 @@ if (process.env.JAWSDB_URL) {
 	);
 }
 
+// Establish connection
 module.exports = sequelize;
