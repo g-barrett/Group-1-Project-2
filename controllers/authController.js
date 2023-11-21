@@ -53,7 +53,7 @@ router.post('/register', async (req, res) => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
             console.log(`Body Req`, req.body)
-            res.redirect('/restaurants');
+            res.redirect('/restaurant');
         });
     } catch (err) {
         res.render('homepage', { loginError: 'Something went wrong. Please review form and resubmit.' })
