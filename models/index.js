@@ -1,12 +1,9 @@
 const User = require('./user');
 const Restaurant = require('./restaurants');
-// const Likes = require('./likes');
+const Likes = require('./likes');
 
-// Define associations between User and Restaurant
-// Like.belongsToMany(User, {
-//     through: {
-//         model:
-//     }
-// })
+// Associations
+User.belongsToMany(Restaurant, { through: Likes });
+Restaurant.belongsToMany(User, { through: Likes });
 
-module.exports = { User, Restaurant };
+module.exports = { User, Restaurant, Likes };
