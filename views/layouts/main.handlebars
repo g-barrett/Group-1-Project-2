@@ -29,8 +29,8 @@
                 <a class="nav-link relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-right" href="/restaurants">Restaurants</a>
                 {{else}}
                 <a class="nav-link relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-right" href="/home">Home</a>
-                <a class="nav-link relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-right" href="#signup-form">Signup</a>
-
+                <a class="nav-link relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-right" href="#"
+				onclick="showSignupForm()">Register</a>
                 {{/if}}
             </div>
         </nav>
@@ -46,7 +46,7 @@
 <script src="/js/restaurantPage.js"></script>
 
 
-{{!-- Both Google JS Maps Lirary and Google Places Library --}}
+{{!-- Both Google JS Maps Library and Google Places Library --}}
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYNbRcyJ5B8V1_4ND-W2Z5OfYskYuj0sA&libraries=geometry,places&callback=initMap">
 </script>
