@@ -147,6 +147,7 @@ function onPlaceChanged() {
 		{
 			location: place.geometry.location,
 			radius: "500",
+			openNow: true,
 			type: ["restaurant", "cafe"],
 			keyword: "dining, food, drinks, lunch, breakfast, dinner",
 		},
@@ -185,10 +186,22 @@ function callback(results, status) {
 			let cardDiv = document.createElement("div");
 			cardDiv.className = "restaurant-card";
 
-			// Add restaurant details to the card
+			// Add restaurant name to the card
 			let restaurantName = document.createElement("h5");
 			restaurantName.textContent = restaurant.name;
 			cardDiv.appendChild(restaurantName);
+
+			// Wanted to add hours of operation, but not available in result object
+			// let restaurantHours = document.createElement("h5");
+			// restaurantHours.textContent = "Price Level: " + restaurant.???;
+			// cardDiv.appendChild(restaurantHours);
+
+			console.log(restaurant);
+
+			// Add restaurant address to the card
+			let restaurantAddress = document.createElement("p");
+			restaurantAddress.textContent = restaurant.vicinity;
+			cardDiv.appendChild(restaurantAddress);
 
 			if (restaurant.photos) {
 				let restaurantImage = document.createElement("img");
