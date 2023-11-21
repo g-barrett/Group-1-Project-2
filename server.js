@@ -50,6 +50,12 @@ app.get("/", (req, res) => {
 	});
 });
 
+app.post("/register", (req, res) => {
+	res.redirect("/restaurant", {
+		googleApiKey: process.env.GOOGLE_API_KEY,
+	});
+});
+
 app.get("/restaurant", (req, res) => {
 	// Fetch data
 	const restaurants = [
