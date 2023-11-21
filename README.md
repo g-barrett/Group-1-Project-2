@@ -1,10 +1,15 @@
-# Restaurant Locator Application
+# NOM NOM Navigator Restaurant Locator Application
 
 ![GitHub](https://img.shields.io/github/license/your-username/your-repo)
 ![Node.js Version](https://img.shields.io/badge/node-%3E%3D%2012.0.0-brightgreen)
 ![npm Version](https://img.shields.io/badge/npm-%3E%3D%206.0.0-blue)
 
 ## Overview
+
+<!-- ![Home Landing Page](./public/images/Home.png) -->
+<p align="center">
+<img src="./public/images/Home.png" width="auto" height="auto">
+</p>
 
 The Restaurant Locator is a web-based application designed to help users find the top three restaurant suggestions within their vicinity. Leveraging the Google Maps API, it provides an intuitive interface for locating restaurants and cafes, complete with a map and detailed information about each establishment.
 
@@ -36,6 +41,10 @@ To provide a user-friendly and efficient method for individuals to discover rest
 ## Usage
 
 Enter a location in the search bar on the application's homepage. The app will display the top three restaurants or cafes in the vicinity on the interactive map. Detailed information about each restaurant can be viewed by clicking on their respective card in the carousel.
+
+<p align="center">
+    <img src="./public/images/Restaurants.png" width="auto" height="auto">
+</p>
 
 ### Special Usage Note:
 
