@@ -98,7 +98,7 @@ function initMap() {
 		document.getElementById("search"),
 		{
 			types: ["geocode"],
-			componentRestrictions: { country: ["US"] },
+			// componentRestrictions: { country: ["US"] },
 			// fields: ['address_components','adr_address', 'place_id', 'geometry', 'opening_hours', 'secondary_opening_hours', 'name', 'atmosphere', 'website']
 		}
 	);
