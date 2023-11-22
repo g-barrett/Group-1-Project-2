@@ -6,7 +6,6 @@ const { User } = require('../models');
 // Route to render the homepage
 router.get('/home', (req, res) => {
     // Render the 'homepage' view with the logged_in variable
-    console.log('HOME ROUTE!')
     res.render('homepage', { logged_in: req.isLoggedin }); 
 });
 

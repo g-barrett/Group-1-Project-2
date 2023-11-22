@@ -23,8 +23,6 @@ function initMap() {
 	window.restaurantCount = 0;
 
 	// Creates Google Map
-	// var map = new google.maps.Map(mapDiv, {
-
 	map = new google.maps.Map(document.getElementById("map"), {
 		// Austin coordinates
 		center: { lat: 30.266666, lng: -97.73333 },
@@ -98,6 +96,7 @@ function initMap() {
 		document.getElementById("search"),
 		{
 			types: ["geocode"],
+
 			// componentRestrictions: { country: ["US"] },
 			// fields: ['address_components','adr_address', 'place_id', 'geometry', 'opening_hours', 'secondary_opening_hours', 'name', 'atmosphere', 'website']
 		}
@@ -133,7 +132,6 @@ function onPlaceChanged() {
 	document.getElementById("results").innerHTML = "";
 
 	var place = autocomplete.getPlace();
-	console.log(place);
 
 	// Creates Google Map
 	map = new google.maps.Map(document.getElementById("map"), {
@@ -153,7 +151,6 @@ function onPlaceChanged() {
 		},
 		callback
 	);
-	// injectCSS();
 }
 
 function callback(results, status) {
@@ -191,13 +188,6 @@ function callback(results, status) {
 			restaurantName.textContent = restaurant.name;
 			cardDiv.appendChild(restaurantName);
 
-			// Wanted to add hours of operation, but not available in result object
-			// let restaurantHours = document.createElement("h5");
-			// restaurantHours.textContent = "Price Level: " + restaurant.???;
-			// cardDiv.appendChild(restaurantHours);
-
-			console.log(restaurant);
-
 			// Add restaurant address to the card
 			let restaurantAddress = document.createElement("p");
 			restaurantAddress.textContent = restaurant.vicinity;
@@ -209,8 +199,6 @@ function callback(results, status) {
 				restaurantImage.className = "img-fluid"; // Responsive images
 				cardDiv.appendChild(restaurantImage);
 			}
-
-			// Maybe add ratings/likes/etc here?
 
 			// Append the card to the column
 			colDiv.appendChild(cardDiv);
