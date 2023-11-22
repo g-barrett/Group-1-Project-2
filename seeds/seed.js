@@ -7,7 +7,6 @@ const seedData = async () => {
     // Read JSON file
     // Sync database
     await sequelize.sync({ force: true });
-    console.log('Database synced successfully!')
 
     const rawDataUser = fs.readFileSync(path.join(__dirname, 'userSeedData.json'));
     const users = JSON.parse(rawDataUser);
@@ -15,7 +14,6 @@ const seedData = async () => {
         individualHooks: true,
         returning: true,
     })
-    console.log('Users seeded successfully!');
 
     const rawDataRest = fs.readFileSync(path.join(__dirname, 'restaurantSeedData.json'));
     const restaurants = JSON.parse(rawDataRest);
@@ -23,7 +21,6 @@ const seedData = async () => {
         individualHooks: true,
         returning: true,
         });
-        console.log('Restaurants seeded successfully!')
     };
 
 seedData().then(() => {

@@ -1,1 +1,0 @@
-// Fetch coordinates locations and other data from databse / API 

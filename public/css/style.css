@@ -6,8 +6,6 @@
     box-sizing: border-box;
 }
 
-/* NOTE: body was here not sure if this will mess up css  */
-
 header {
     text-align: center;
     width: 100%;
@@ -39,7 +37,6 @@ header {
     text-decoration: none;
     color: #D3FA52; /* Bright yellow for headers */
     text-shadow: 2px 3px 1px #EC058E;
-    /* margin: 0 1em; */
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     transition: color 250ms ease-in-out; /* Add a color transition */
@@ -71,14 +68,12 @@ a:hover:after {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    /* padding: 20px; */
     background-color: #30332E; 
     color: #FDFFFC; 
     display: flex;
     flex-direction: column;
     align-items: center; 
     justify-content: center; 
-    /* min-height: 100vh;  */
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
         /* Set the background image */
@@ -114,8 +109,6 @@ p {
     position: relative;
     width: 100%;
     height: 50px;
-    /* background-color: #EC058E; */
-    /* margin: 30px 0; */
     text-align: center;
 }
 
@@ -138,12 +131,10 @@ p {
 
 .input-box i {
     position: absolute;
-    /* justify-content: center; */
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
-    /* bottom: 5px; */
 
 }
 
@@ -151,8 +142,6 @@ p {
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
-    /* margin: -15px 0 15px; */
-    /* padding: 5px; */
 }
 
 .remember-forgot label input {
@@ -184,7 +173,6 @@ a:hover {
     margin: 0 auto;
     width: 100%;
     height: 45px;
-    /* background: #FDFFFC; */
     border: none;
     outline: none;
     border-radius: 40px;
@@ -208,19 +196,6 @@ a:hover {
 .register-link p a:hover {
     text-decoration: underline;
 }
-
-/* .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    } */
 
 h1 {
     text-align: center;
@@ -253,7 +228,6 @@ h3 {
     justify-content: flex-start;
     align-items: center; /* Center the forms horizontally */
     gap: 20px; /* Reduced space between forms */   
-    /* text-align: center; */
 }
 
 .container-row {
@@ -303,8 +277,7 @@ form {
 .restaurant-card {
     width: 100%; 
     max-width: 250px;
-    height: auto; 
-    /* background: #043CAD; */
+    height: auto;
     margin: 5px;
     padding: 20px 69px;
     border-radius: 8px;
@@ -355,7 +328,6 @@ form {
 
 form>div>p {
     margin: 10px !important;
-    /* padding: 10px; */
     color: #FDFFFC;
 }
 
@@ -379,13 +351,7 @@ form>div>a {
 #map {
     height: 700px; 
     width: 500px;
-    /* background-color: transparent; */
 }
-
-/* element .style {
-    background-color: transparent;
-} */
-
 
 label {
     display: block;
@@ -420,7 +386,6 @@ button[type=submit] {
 
 button[type=submit]:hover {
     background: #EC058E;
-    /* color: #FDFFFC; */
 }
 
 .error-message {
@@ -469,16 +434,7 @@ button[type=submit]:hover {
     box-shadow: 0 0 10px black;
     border-radius: 10px;
     padding: 20px;
-    /* margin: auto; */
-    /* Maintain the original size to fit the map */
-    /* height: 700px; 
-    width: 500px; */
 }
-
-/* .gm-style  div {
-    background-color: none !important;   
-    margin: 0; 
-} */
 
 /* Responsive Layout */
 @media (min-width: 600px) {
@@ -506,4 +462,3 @@ button[type=submit]:hover {
         width: 100%;
     }
 }
-

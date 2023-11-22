@@ -3,13 +3,6 @@ const sequelize = require('../config/connection.js');
 
 class Likes extends Model {};
 
-
-
-// Associations
-// User.hasMany(Restaurant, { through: Likes });
-// Restaurant.belongsToMany(User, { through: Likes });
-
-
 Likes.init(
     {
         user_id: {
