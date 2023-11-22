@@ -70,6 +70,9 @@ Enter a location in the search bar on the application's homepage. The app will d
 
 - Andrew Tullos - [GitHub](https://github.com/AndrewTullos)
 - Catherine Parker - [GitHub](https://github.com/caparker23)
+- Gabriel Barret - [GitHub](https://github.com/g-barrett)
+- Cara Rosa - [GitHub](https://github.com/CaraRosa)
+- Jozeline Su - [GitHub](https://github.com/JozelineSu)
 
 ## Contributing
 
