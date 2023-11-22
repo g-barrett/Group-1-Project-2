@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
 app.get("/", (req, res) => {
-	res.render("main.handlebars", "restaurant.handlebars", {
+	res.render("restaurant", {
 		googleApiKey: process.env.GOOGLE_API_KEY,
 	});
 });
